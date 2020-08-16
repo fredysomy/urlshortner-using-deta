@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.0",
     "path": "^0.12.7"
+  }
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
