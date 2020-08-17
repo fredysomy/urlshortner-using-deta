@@ -1,16 +1,15 @@
-var mon=require('mongoose');
 var express=require('express');
-require('dotenv').config()
-var path=require('path');
 var bodyParser=require('body-parser');
+var mon=require('mongoose');
+require('dotenv').config();
+var bodyParser = require('body-parser');
+var path=require('path');
 app=express();
-
 app.use(bodyParser.urlencoded({extended:false}));
-app.set('view engine','ejs');
-app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
-app.set('views',path.join(__dirname,"views"));
-
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname,'views'));
+app.use(bodyParser.json());
 
 mon.connect(process.env.ATLAS_URI,{useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -44,12 +43,12 @@ app.get('/:id',(req,res)=>{
         try{
         res.status(301).redirect(doc.url);}
         catch(err){
-            console.log("err")
+            res.send("THE PAGE DOENT EXIST")
         }
     });
 });
 
 
 app.listen(8080,()=>{
-    console.log("server on 8080")
+    console.log("server on 4345")
 })

@@ -8,25 +8,27 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div align="center">
-        <h1 class="display-4">URLshortner</h1>
+    <div align="center" style="height:100vh;background-image:url('https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=649&q=80');background-repeat: repeat;background-size: cover;background-position: left;">
+        <h1 class="display-4 shadow-lg p-3 mb-5 bg-white rounded" style="background-color: rgb(184, 136, 136);font-family: 'Lobster', cursive;">URL-shortner</h1>
         <div class="row" style="margin:0 5%;">
-        <div class="col-lg-3 col-sm-10 border border-primary rounded" style="margin:5% auto;" align="center">
+        <div class="col-lg-3 col-sm-10 shadow-lg p-3 mb-5 bg-white rounded" style="margin:5% auto;background-color: cyan;" align="center">
 <form class="form-gruop" autocomplete="off" method="POST" action="/a/add">
 
-    <label class="lead" for id="one" align="left">URL</label><br>
-<p class="text-muted">Include http:// or https:// if it has.</p>
+    <label class="lead bold" for id="one" align="left">URL</label><br>
+<p class="text-muted">Include http:// or https://.</p>
     <input  class="form-control" id="one" type="text" name="name" required="required"><br>
     <label class="lead" for id="two" align="left">Slug</label><br>
     <input   class="form-control" id="two" type="text" name="email" required="required"><br>
 <%= err %><br>
-    <button class="btn btn-primary">Submit</button><br>
+    <button class="btn btn-outline-primary">Shorten-URL</button><br>
    
 </form>
 </div></div>
-
+<a href="https://github.com/fredysomy" target="_blank" class="giticon" style="margin:1%;"><img class="logo" src="https://img.icons8.com/fluent/35/000000/github--v1.png"/></a> 
+<a href="https://www.linkedin.com/in/fredysomy/" target="_blank" class="giticon" style="margin:1%;"><img class="logo" src="https://img.icons8.com/fluent/35/000000/linkedin.png"/></a>
     
 </body>
 </html>
