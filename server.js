@@ -4,6 +4,7 @@ var mon=require('mongoose');
 require('dotenv').config();
 var bodyParser = require('body-parser');
 var path=require('path');
+var crypto=require('crypto');
 app=express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
@@ -23,15 +24,23 @@ app.get('/',(req,res)=>{
 app.post('/a/add',(req,res)=>{
     
         const ur=new u();
-        ur.url=req.body.name;
-        ur.slug=req.body.email;
+        ur.url=req.body.url;
+        ur.slug=req.body.slug;
         ur.save((err,doc)=>{
            if(!err){
-               url=req.get('host')+'/'+req.body.email
+               url=req.get('host')+'/'+req.body.slug;
                res.render('sucess',{url:url});
            }
            else{
-            res.render('main',{err: "slug aldredy exists"});
+            const ur=new u();
+            ur.url=req.body.url;
+            ur.slug=req.body.slug+crypto.randomBytes(2).toString('hex');
+            ur.save((err)=>{
+                if(!err){
+                    url=req.get('host')+'/'+ur.slug;
+                    res.render('sucess',{url:url});
+                }
+                });
            }
         });
        
@@ -43,7 +52,7 @@ app.get('/:id',(req,res)=>{
         try{
         res.status(301).redirect(doc.url);}
         catch(err){
-            res.send("THE PAGE DOENT EXIST")
+            res.status(404).send("URL WHICH WAS COVERTED IS MISSING ");
         }
     });
 });
