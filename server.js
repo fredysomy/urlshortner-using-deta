@@ -59,5 +59,7 @@ app.get('/:id',(req,res)=>{
 
 
 app.listen(8080,()=>{
-    console.log("server on 4345")
+    console.log("server on 8080")
 })
+
+//When it comes to routing create another file so that you could add the routing functionalites there using 'express.Router' rather than adding routes in the server.js file
