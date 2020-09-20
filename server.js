@@ -59,5 +59,5 @@ app.get('/:id',(req,res)=>{
 
 
 app.listen(8080,()=>{
-    console.log("server on 4345")
+    console.log("server on 8080")
 })
