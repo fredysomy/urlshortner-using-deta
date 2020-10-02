@@ -17,19 +17,22 @@ mon.connect(process.env.ATLAS_URI,{useNewUrlParser: true, useUnifiedTopology: tr
 mon.connection.once("open", (err)=>{
     console.log("mongodb connected")
 });
-let u=require('./model/url.model')
+let u=require('./model/url.model');
+
 app.get('/',(req,res)=>{
     res.render('main',{err: " "});
 });
+
 app.post('/a/add',(req,res)=>{
     
         const ur=new u();
         ur.url=req.body.url;
         ur.slug=req.body.slug;
+        sl=ur.slug;
         ur.save((err,doc)=>{
            if(!err){
                url=req.get('host')+'/'+req.body.slug;
-               res.render('sucess',{url:url});
+               res.render('sucess',{url:url,sl:sl});
            }
            else{
             const ur=new u();
@@ -38,7 +41,7 @@ app.post('/a/add',(req,res)=>{
             ur.save((err)=>{
                 if(!err){
                     url=req.get('host')+'/'+ur.slug;
-                    res.render('sucess',{url:url});
+                    res.render('sucess',{url:url,sl:sl});
                 }
                 });
            }
