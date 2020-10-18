@@ -1,14 +1,11 @@
 # URLshortner
 
-## A simple url shortner using mongodb,express and node..
+## A simple url shortner using Deta bases and hosted in micros
 
 
-http://usht.cleverapps.io/
+https://o6ippn.deta.dev/
 
-Expamples.
-* Link:https://www.hindustantimes.com/bollywood/iaf-pilot-who-served-with-gunjan-saxena-slams-film-for-peddling-lies-gives-stern-advice-to-janhvi-kapoor/story-sjOZoEWKIq1xKqDF64vTJO.html
-  * Short url:http://usht.cleverapps.io/iaf
-  
+
 # Contribute
 I will love your contribution . Please create a issue and make a pull request <br>
 
