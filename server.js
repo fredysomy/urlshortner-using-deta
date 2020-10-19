@@ -24,6 +24,8 @@ app.post('/a/add',async (req,res)=>{
 app.get('/:id',async (req,res)=>{
     const a=await db.fetch({slug:req.params.id}).next()
     res.status(301).redirect(a.value[0].url)
+    //Fetch returns a array of value from database
+    //Select the first item in array (value[0]) and extract the value of key "url"
 });
 
 module.exports = app
